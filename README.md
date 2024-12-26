@@ -26,7 +26,6 @@ Welcome to my GitHub! I'm Renzo, a BSIT (Bachelor of Science in Information Tech
 ## Let's Connect!  
 I'm always open to learning and collaboration. Feel free to connect with me:  
 - 📫 Email: genandoy_renzo@fbc.ph.edudcation  
-- 🌐 LinkedIn: [Your LinkedIn Profile Link Here]  
 
 ---
 
