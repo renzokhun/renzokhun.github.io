@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -142,7 +141,67 @@
       width: 100%;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
+
+      .blog {
+  padding: 50px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.blog h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.blog-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  background: rgba(30, 30, 47, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 300px;
+  text-align: left;
+}
+
+.blog-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #f1c40f;
+}
+
+.blog-card .date {
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.blog-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.blog-card .read-more {
+  display: inline-block;
+  text-decoration: none;
+  color: #f1c40f;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.blog-card .read-more:hover {
+  color: #ff6347;
+}
   </style>
 </head>
 
@@ -204,6 +263,18 @@
     <img src="https://wallpaperaccess.com/full/1504365.jpg" alt="Background Image">
   </section>
 
+  <section id="blog" class="blog">
+  <h2>Blog Posts</h2>
+  <div class="blog-container">
+    <div class="blog-card">
+      <h3>Anime I'm Currently Watching This <span class="highlight">Fall 2023</span></h3>
+      <p class="date">November 9, 2023</p>
+      <img src="https://your-image-url.com/your-image.jpg" alt="Anime I'm Watching">
+      <a href="#" class="read-more">Read →</a>
+    </div>
+  </div>
+  </section
+    
   <footer>
     <p>© RENZO RESTRICTED.</p>
   </footer>
