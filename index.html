@@ -188,31 +188,86 @@
 .blog-card img {
   width: 100%;
   border-radius: 10px;
+
+  /* Blog Section */
+.blog {
+  padding: 50px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.blog-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  background: rgba(30, 30, 47, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  max-width: 300px;
+  text-align: left;
+  position: relative;
+}
+
+.blog-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #f1c40f;
+}
+
+.blog-card .date {
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.blog-card img {
+  width: 100%;
+  border-radius: 10px;
   margin-bottom: 15px;
 }
 
-.blog-card .read-more {
+.blog-card .blog-preview {
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.blog-card .hidden-content {
+  display: none;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.blog-card .read-more-btn {
   display: inline-block;
   text-decoration: none;
   color: #f1c40f;
   font-size: 1.2em;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.blog-card .read-more:hover {
+  .blog-card .read-more-btn:hover {
   color: #ff6347;
 }
+ 
   </style>
 </head>
-
 <body>
-
   <nav>
     <ul>
       <li><a href="#about">About Me</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#hobby">Hobby</a></li>
-      <li><a href="#background">My Background</a></li>
+      <li><a href="#background">Background</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -257,28 +312,52 @@
   </div>
   </section>
     
-  <section id="background" class="background">
-    <h2>My Background</h2>
-    <p>I was born and raised in a small but vibrant city where my passion for IT and creativity grew. My journey started with tinkering with old computers, which eventually turned into a love for coding and design. Through determination, I've expanded my skills into programming, hardware troubleshooting, and digital art!</p>
-    <img src="https://wallpaperaccess.com/full/1504365.jpg" alt="Background Image">
-  </section>
-
-  <section id="blog" class="blog">
+<section id="blog" class="blog">
   <h2>Blog Posts</h2>
   <div class="blog-container">
+    <!-- Blog Card -->
     <div class="blog-card">
       <h3>Anime I'm Currently Watching This <span class="highlight">Fall 2023</span></h3>
       <p class="date">November 9, 2023</p>
       <img src="https://your-image-url.com/your-image.jpg" alt="Anime I'm Watching">
-      <a href="#" class="read-more">Read →</a>
+      <p class="blog-preview">
+        This fall season is filled with amazing anime titles. From heartwarming stories to action-packed adventures...
+      </p>
+      <!-- Hidden content -->
+      <div class="hidden-content">
+        <p>
+          Some of my favorites include "Spy x Family", "Frieren: Beyond Journey's End", and "Undead Unluck." These shows have unique storytelling, unforgettable characters, and stunning animation!
+        </p>
+      </div>
+      <a href="#" class="read-more-btn">Read More →</a>
     </div>
   </div>
-  </section
+</section>
     
   <footer>
     <p>© RENZO RESTRICTED.</p>
-  </footer>
+</footer>
 
-</body>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const readMoreBtns = document.querySelectorAll(".read-more-btn");
 
+    readMoreBtns.forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        const card = btn.closest(".blog-card");
+        const hiddenContent = card.querySelector(".hidden-content");
+
+        if (hiddenContent.style.display === "block") {
+          hiddenContent.style.display = "none";
+          btn.textContent = "Read More →";
+        } else {
+          hiddenContent.style.display = "block";
+          btn.textContent = "Read Less ←";
+        }
+      });
+    });
+  });
+</script>  
+ </body>
 </html>
