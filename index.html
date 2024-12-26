@@ -1,560 +1,212 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Renzo Genandoy</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-
   <style>
-
+    /* Global Styles */
     body {
-
       margin: 0;
-
       font-family: 'MedievalSharp', cursive;
-
       background: linear-gradient(to bottom, #1e1e2f, #4b4b6f);
-
       color: white;
-
       overflow-x: hidden;
-
     }
-
-
-
-    header {
-
-      text-align: center;
-
-      padding: 50px 0;
-
-      background: url('https://wallpaperaccess.com/full/1947432.jpg') center/cover no-repeat;
-
-      color: #f1f1f1;
-
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
-    }
-
-
-
-    header h1 {
-
-      font-size: 3em;
-
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-
-      margin: 0;
-
-    }
-
-
-
-    header p {
-
-      font-size: 1.2em;
-
-      margin-top: 10px;
-
-    }
-
-
 
     nav {
-
       position: fixed;
-
       top: 0;
-
       left: 0;
-
       width: 100%;
-
       background: rgba(30, 30, 47, 0.9);
-
       padding: 10px 0;
-
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
-
     }
-
-
 
     nav ul {
-
       display: flex;
-
       justify-content: center;
-
       list-style: none;
-
       padding: 0;
-
       margin: 0;
-
     }
-
-
 
     nav ul li {
-
       margin: 0 15px;
-
     }
-
-
 
     nav ul li a {
-
       color: #f1f1f1;
-
       text-decoration: none;
-
       font-size: 1.2em;
-
     }
 
+    header {
+      text-align: center;
+      padding: 50px 0;
+      background: url('https://wallpaperaccess.com/full/1947432.jpg') center/cover no-repeat;
+      color: #f1f1f1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
 
+    header h1 {
+      font-size: 3em;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
 
     section {
-
       padding: 50px;
-
       text-align: center;
-
     }
-
-
 
     section h2 {
-
       font-size: 2.5em;
-
       margin-bottom: 20px;
-
     }
 
-
-
-    .about, .skills, .hobby, .future, .contact {
-
+    .about, .skills, .hobby, .future, .contact, .background {
       background: rgba(255, 255, 255, 0.1);
-
       border-radius: 15px;
-
       padding: 30px;
-
       margin: 20px auto;
-
       max-width: 800px;
-
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
     }
 
-
-
-    .skills ul, .hobby ul {
-
+    .skills ul, .hobby ul, .future ul {
       list-style: none;
-
       padding: 0;
-
     }
 
-
-
-    .skills ul li, .hobby ul li {
-
+    .skills ul li, .hobby ul li, .future ul li {
       margin: 10px 0;
-
       font-size: 1.2em;
-
     }
-
-
 
     .contact a {
-
       color: #f1c40f;
-
       text-decoration: none;
-
       font-size: 1.5em;
-
       margin: 0 10px;
-
       transition: transform 0.3s ease, color 0.3s ease;
-
     }
-
-
 
     .contact a:hover {
-
       transform: scale(1.2);
-
       color: #ff6347;
-
     }
-
-
-
-    .programmer-gifs {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      justify-content: center;
-
-      gap: 20px;
-
-      margin-top: 30px;
-
-    }
-
-
-
-    .programmer-gifs img {
-
-      width: 200px;
-
-      height: auto;
-
-      border-radius: 10px;
-
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
-      transition: transform 0.3s ease;
-
-    }
-
-
-
-    .programmer-gifs img:hover {
-
-      transform: scale(1.1);
-
-    }
-
-
-
-    footer {
-
-      text-align: center;
-
-      padding: 20px;
-
-      background: #1e1e2f;
-
-      color: #ccc;
-
-    }
-
-
-
-    .photo {
-
-      margin: 20px 0;
-
-      text-align: center;
-
-    }
-
-
 
     .photo img {
-
       width: 150px;
-
       height: 150px;
-
       border-radius: 50%;
-
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-
       transition: transform 0.3s ease;
-
     }
-
-
 
     .photo img:hover {
-
       transform: scale(1.1);
-
     }
 
-  </style>
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1e1e2f;
+      color: #ccc;
+    }
 
+    /* New Section Styling */
+    .background {
+      background: linear-gradient(to right, #4b4b6f, #1e1e2f);
+      color: #f1f1f1;
+    }
+
+    .background p {
+      font-size: 1.3em;
+      margin: 20px 0;
+    }
+
+    .background img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
 
 <body>
 
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#hobby">Hobby</a></li>
+      <li><a href="#background">My Background</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
+  <header>
+    <h1>PORTFOLIO</h1>
+    <p>sate sate sate!</p>
+  </header>
 
-<nav>
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <div class="photo">
+      <img src="https://avatars.githubusercontent.com/u/168648792?v=4" alt="My Photo">
+    </div>
+    <p>Hi, I'm Renzo! a hardware enthusiast, future programmer, BSIT student, and an anime fan.</p>
+  </section>
 
-  <ul>
-
-    <li><a href="#about">About Me</a></li>
-
-    <li><a href="#skills">Skills</a></li>
-
-    <li><a href="#hobby">Hobby</a></li>
-
-    <li><a href="#future">My Future</a></li>
-
-    <li><a href="#contact">Contact</a></li>
-
-  </ul>
-
-</nav>
-
-
-
-<header>
-
-  <h1>PORTFOLIO</h1>
-
-  <p>sate sate sate!</p>
-
-</header>
-
-
-
-<section id="about" class="about">
-
-  <h2>About Me</h2>
-
-  <div class="photo">
-
-    <img src="https://avatars.githubusercontent.com/u/168648792?v=4" alt="My Photo">
-
-  </div>
-
-  <p>Hi, I'm Renzo! a hardware enthusiast, programmer, BSIT student, and an anime fan.</p>
-
-</section>
-
-
-
-<section id="skills" class="skills">
-
-  <h2>Skills</h2>
-
-  <ul>
-
-    <li>Computer Hardware Troubleshooting</li>
-
-    <li>Programming Basics (Java)</li>
-
-    <li>Design</li>
-
-    <li>Cooking</li>
-
-  </ul> 
-
-  <div class="section-gif">
-
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Computer Hardware Troubleshooting</li>
+      <li>Programming Basics (Java)</li>
+      <li>Design</li>
+      <li>Cooking</li>
+    </ul>
+      <div class="section-gif">
     <img src="https://media.giphy.com/media/pT3aIE6Y76m5O/giphy.gif?cid=ecf05e47863724eea7v5gymbxii6hlgggmkwnoefj1kxoytf&ep=v1_gifs_related&rid=giphy.gif&ct=s" alt="Meliodas Skills GIF">
+      </div>
+  </section>
 
-  </div>
-
-</section>
-
-
-
-<section id="hobby" class="hobby">
-
+  <section id="hobby" class="hobby">
   <h2>Hobbies</h2>
-
   <ul>
-
     <li>Watching Anime</li>
-
     <li>Drawing Fan Art</li>
-
     <li>Exploring Web Animations</li>
-
     <li>Gaming</li>
-
   </ul> 
-
    <div class="section-gif">
-
     <img src="https://media.giphy.com/media/5tMJgXVhiGKsg/giphy.gif?cid=ecf05e47863724eea7v5gymbxii6hlgggmkwnoefj1kxoytf&ep=v1_gifs_related&rid=giphy.gif&ct=s" alt="Hobbies GIF">
-
   </div>
-
-</section>
-
-
-
-<section id="future" class="future">
-
-  <h2>My Future</h2>
-
-  <p>In the future, I aim to:</p>
-
-  <ul>
-
-    <li>Master advanced programming languages like Python and C++</li>
-
-    <li>Contribute to open-source projects</li>
-
-    <li>Develop my own web and mobile applications</li>
-
-    <li>Pursue a career in software engineering or game development</li>
-
-  </ul> 
-
-  <div class="section-gif">
-
-    <img src="https://media.giphy.com/media/ir5iL7AFTQgr6/giphy.gif?cid=ecf05e47brvkky9eiwtftz4d3u6d68eeftfit3iqa4mkp9hh&ep=v1_gifs_related&rid=giphy.gif&ct=s" alt="Future GIF">
-
-  </div>
-
-</section>
-
-
-
-<section id="programmer-gifs" class="programmer-gifs">
-
-  <h2>STATUS RN:</h2>
-
-  <div>
-
-    <img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" alt="Coding GIF">
-
-    <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Programming GIF">
-
-    <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="Debugging GIF">
-
-  </div>
-
-</section>
-
-
-
-<section id="contact" class="contact">
-
-  <h2>Contact Info</h2>
-
-  <p>Feel free to reach out on any of my social platforms:</p>
-
-  <a href="https://www.facebook.com/renzo.genandoy" target="_blank">Facebook</a>
-
-  <a href="renzokhun@gmail.com" target="_blank">Gmail</a>
-
-  <a href="https://instagram.com/renzio_ml" target="_blank">Instagram</a>
-
-</section>
-
-
-
-<footer>
-
-  <p>© RENZO RESTRICTED.</p>
-
-</footer>
-
-
-
-<script>
-
-  anime({
-
-    targets: 'header h1',
-
-    translateY: [-50, 0],
-
-    opacity: [0, 1],
-
-    duration: 2000,
-
-    easing: 'easeOutElastic'
-
-  });
-
-
-
-  anime({
-
-    targets: 'header p',
-
-    translateX: [-50, 0],
-
-    opacity: [0, 1],
-
-    duration: 2000,
-
-    delay: 500,
-
-    easing: 'easeOutExpo'
-
-  });
-
-
-
-  // Navigation hover effect
-
-  document.querySelectorAll('nav ul li a').forEach(link => {
-
-    link.addEventListener('mouseover', () => {
-
-      anime({
-
-        targets: link,
-
-        color: ['#fff', '#f1c40f'],
-
-        duration: 300,
-
-        easing: 'easeInOutQuad'
-
-      });
-
-    });
-
-
-
-    link.addEventListener('mouseout', () => {
-
-      anime({
-
-        targets: link,
-
-        color: ['#f1c40f', '#fff'],
-
-        duration: 300,
-
-        easing: 'easeInOutQuad'
-
-      });
-
-    });
-
-  });
-
-</script>
-
-
+  </section>
+    
+  <section id="background" class="background">
+    <h2>My Background</h2>
+    <p>I was born and raised in a small but vibrant city where my passion for IT and creativity grew. My journey started with tinkering with old computers, which eventually turned into a love for coding and design. Through determination, I've expanded my skills into programming, hardware troubleshooting, and digital art!</p>
+    <img src="https://wallpaperaccess.com/full/1504365.jpg" alt="Background Image">
+  </section>
+
+  <footer>
+    <p>© RENZO RESTRICTED.</p>
+  </footer>
 
 </body>
 
