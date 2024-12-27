@@ -216,6 +216,29 @@
     .blog-card .read-more-btn:hover {
       color: #ff6347;
     }
+
+    .hidden-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hidden-content.visible {
+  display: block;
+  opacity: 1;
+}
+
+.read-more-btn {
+  cursor: pointer;
+  color: #f1c40f;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  color: #ff6347;
+}
   </style>
   </head>
 <body>
@@ -346,27 +369,33 @@
   </div>
   </section>
   
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const readMoreBtns = document.querySelectorAll(".read-more-btn");
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const readMoreBtns = document.querySelectorAll(".read-more-btn");
 
-    readMoreBtns.forEach((btn) => {
-      btn.addEventListener("click", function (e) {
-        e.preventDefault();
-        const card = btn.closest(".blog-card");
-        const hiddenContent = card.querySelector(".hidden-content");
+  readMoreBtns.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      const card = btn.closest(".blog-card");
+      const hiddenContent = card.querySelector(".hidden-content");
 
-        if (hiddenContent.style.display === "block") {
+      if (hiddenContent.classList.contains("visible")) {
+        hiddenContent.classList.remove("visible");
+        setTimeout(() => {
           hiddenContent.style.display = "none";
-          btn.textContent = "Read More →";
-        } else {
-          hiddenContent.style.display = "block";
-          btn.textContent = "Read Less ←";
-        }
-      });
+        }, 500); // Match this with the transition time
+        btn.textContent = "Read More →";
+      } else {
+        hiddenContent.style.display = "block";
+        setTimeout(() => {
+          hiddenContent.classList.add("visible");
+        }, 0); // Add the "visible" class after making it block
+        btn.textContent = "Read Less ←";
+      }
     });
   });
-</script> 
+});
+</script>
 
   <section id="contact" class="contact">
   <h2>Contact Info</h2>
