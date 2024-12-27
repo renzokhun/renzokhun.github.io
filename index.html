@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
   <style>
-    /* Global Styles */
+ 
     body {
       margin: 0;
       font-family: 'MedievalSharp', cursive;
@@ -126,7 +126,7 @@
       color: #ccc;
     }
 
-    /* New Section Styling */
+    
     .background {
       background: linear-gradient(to right, #4b4b6f, #1e1e2f);
       color: #f1f1f1;
@@ -383,13 +383,13 @@ document.addEventListener("DOMContentLoaded", function () {
         hiddenContent.classList.remove("visible");
         setTimeout(() => {
           hiddenContent.style.display = "none";
-        }, 500); // Match this with the transition time
+        }, 500); 
         btn.textContent = "Read More →";
       } else {
         hiddenContent.style.display = "block";
         setTimeout(() => {
           hiddenContent.classList.add("visible");
-        }, 0); // Add the "visible" class after making it block
+        }, 0);
         btn.textContent = "Read Less ←";
       }
     });
